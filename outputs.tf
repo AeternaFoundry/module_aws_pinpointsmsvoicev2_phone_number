@@ -54,6 +54,10 @@ output "pinpointsmsvoicev2_phone_numbers_self_managed_opt_outs_enabled" {
   description = "Map of self_managed_opt_outs_enabled values across all pinpointsmsvoicev2_phone_numbers, keyed the same as var.pinpointsmsvoicev2_phone_numbers"
   value       = { for k, v in aws_pinpointsmsvoicev2_phone_number.pinpointsmsvoicev2_phone_numbers : k => v.self_managed_opt_outs_enabled if v.self_managed_opt_outs_enabled != null }
 }
+output "pinpointsmsvoicev2_phone_numbers_status" {
+  description = "Map of status values across all pinpointsmsvoicev2_phone_numbers, keyed the same as var.pinpointsmsvoicev2_phone_numbers"
+  value       = { for k, v in aws_pinpointsmsvoicev2_phone_number.pinpointsmsvoicev2_phone_numbers : k => v.status if v.status != null && length(v.status) > 0 }
+}
 output "pinpointsmsvoicev2_phone_numbers_tags" {
   description = "Map of tags values across all pinpointsmsvoicev2_phone_numbers, keyed the same as var.pinpointsmsvoicev2_phone_numbers"
   value       = { for k, v in aws_pinpointsmsvoicev2_phone_number.pinpointsmsvoicev2_phone_numbers : k => v.tags if v.tags != null && length(v.tags) > 0 }
@@ -73,5 +77,9 @@ output "pinpointsmsvoicev2_phone_numbers_two_way_channel_enabled" {
 output "pinpointsmsvoicev2_phone_numbers_two_way_channel_role" {
   description = "Map of two_way_channel_role values across all pinpointsmsvoicev2_phone_numbers, keyed the same as var.pinpointsmsvoicev2_phone_numbers"
   value       = { for k, v in aws_pinpointsmsvoicev2_phone_number.pinpointsmsvoicev2_phone_numbers : k => v.two_way_channel_role if v.two_way_channel_role != null && length(v.two_way_channel_role) > 0 }
+}
+output "pinpointsmsvoicev2_phone_numbers_wait_for_active" {
+  description = "Map of wait_for_active values across all pinpointsmsvoicev2_phone_numbers, keyed the same as var.pinpointsmsvoicev2_phone_numbers"
+  value       = { for k, v in aws_pinpointsmsvoicev2_phone_number.pinpointsmsvoicev2_phone_numbers : k => v.wait_for_active if v.wait_for_active != null }
 }
 

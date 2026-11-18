@@ -17,6 +17,7 @@ Optional:
     - two_way_channel_arn
     - two_way_channel_enabled
     - two_way_channel_role
+    - wait_for_active
 EOT
 
   type = map(object({
@@ -34,6 +35,7 @@ EOT
     two_way_channel_arn           = optional(string)
     two_way_channel_enabled       = optional(bool)
     two_way_channel_role          = optional(string)
+    wait_for_active               = optional(bool)
   }))
 }
 
